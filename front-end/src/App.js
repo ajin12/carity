@@ -1,31 +1,28 @@
 import React, { Component } from 'react';
 import './App.css';
+import Popup from './Popup'
 import Chart from 'react-google-charts';
-import DonationForm from './DonationForm.js'
+import DonationForm from './DonationForm';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       history: [],
-      displayPopup: false
+      isOpen: false
     }
   }
   displayPopup = () => {
-    this.setState({displayPopup: !this.state.displayPopup})
+    this.setState({isOpen: !this.state.isOpen})
   }
   render() {
-    let popup = null;
-    if (this.state.displayPopup) {
-      popup = (<DonationForm />);
-    }
     return (
       <div className="App">
         <div style={{display: 'flex', maxWidth: 900}} id="chart">
           <Chart
             width={500}
             height={500}
-            chartType="LineChart"
+            chartType="AreaChart"
             loader={<div>Loading Chart</div>}
             data={
               [
@@ -49,6 +46,8 @@ class App extends Component {
               vAxis: {
                 title: 'Donations',
               },
+              pointSize: 5,
+              pointShape: 'circle'
             }}
             legendToggle
           />
@@ -56,7 +55,10 @@ class App extends Component {
         <button onClick={this.displayPopup}>
         Add Donation
         </button>
-        {popup}
+        <Popup show={this.state.isOpen}
+          onClose={this.displayPopup}> 
+          <DonationForm />         
+        </Popup>
       </div>
     );
   }

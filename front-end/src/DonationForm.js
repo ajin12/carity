@@ -8,7 +8,14 @@ export default class DonationForm extends React.Component {
     return (
       <div>
         <form>
-          <p>GIVE ME YOUR DATA!</p>
+          <div class = "container"> 
+            <h1> Add a donation </h1>
+            <label for = "organization"><b> Organization </b></label>
+            <input type = "text" placeholder= "Enter organization name" name = "organization" required />
+
+            <label for = "amount"><b> Amount donated </b></label>
+            <input type = "amount" placeholder="Enter amount donated" name = "amount" required />
+          </div>
         </form>
       </div>
     );
