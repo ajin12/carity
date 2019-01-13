@@ -22,7 +22,7 @@ class App extends Component {
           <Chart
             width={500}
             height={500}
-            chartType="AreaChart"
+            chartType="LineChart"
             loader={<div>Loading Chart</div>}
             data={
               [
@@ -45,6 +45,7 @@ class App extends Component {
               },
               vAxis: {
                 title: 'Donations',
+                minValue: 0
               },
               pointSize: 5,
               pointShape: 'circle'
@@ -52,12 +53,10 @@ class App extends Component {
             legendToggle
           />
         </div>
-        <button onClick={this.displayPopup}>
-        Add Donation
-        </button>
+          <a class="btn-floating btn-large waves-effect waves-light red" onClick={this.displayPopup}><b class="material-icons">+</b></a>
         <Popup show={this.state.isOpen}
           onClose={this.displayPopup}> 
-          <DonationForm />         
+        <DonationForm />         
         </Popup>
       </div>
     );

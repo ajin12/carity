@@ -15,6 +15,7 @@ export default class DonationForm extends React.Component {
 
             <label for = "amount"><b> Amount donated </b></label>
             <input type = "amount" placeholder="Enter amount donated" name = "amount" required />
+            <button onClick={this.props.closePopup}>Submit</button>
           </div>
         </form>
       </div>
