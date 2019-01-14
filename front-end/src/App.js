@@ -17,7 +17,8 @@ class App extends Component {
   }
   render() {
     return (
-      <div className={styles.App} style= {{backgroundColor: this.state.isOpen ? 'rgba(0,0,0,0.2)':'white'}}>
+      <div class = "main"  style= {{backgroundColor: this.state.isOpen ? 'rgba(0,0,0,0.2)':'white'}}>
+      <div className={styles.App}>
         <div class = "center-div" style={{display: 'flex', maxWidth: 900}} id="chart">
           <Chart
             width={900}
@@ -54,11 +55,14 @@ class App extends Component {
             }}
           />
         </div>
+        <div class = "fixed-action-btn">
           <a class="btn-floating btn-large waves-effect waves-light red" onClick={this.displayPopup}><i class="material-icons"> add</i></a>
         <Popup show={this.state.isOpen}
           onClose={this.displayPopup}> 
         <DonationForm />         
         </Popup>
+        </div>
+      </div>
       </div>
     );
   }
