@@ -53,7 +53,7 @@ class App extends Component {
             legendToggle
           />
         </div>
-          <a class="btn-floating btn-large waves-effect waves-light red" onClick={this.displayPopup}><b class="material-icons">+</b></a>
+          <a class="btn-floating btn-large waves-effect waves-light red" onClick={this.displayPopup}><i class="material-icons"> add</i></a>
         <Popup show={this.state.isOpen}
           onClose={this.displayPopup}> 
         <DonationForm />         
