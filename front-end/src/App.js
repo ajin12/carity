@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './App.css';
-import Popup from './Popup'
+import Popup from './Popup';
+import Sidebar from './Sidebar';
 import Chart from 'react-google-charts';
 import DonationForm from './DonationForm';
 
@@ -55,6 +56,7 @@ class App extends Component {
             }}
           />
         </div>
+        <Sidebar />
         <div class = "fixed-action-btn">
           <a class="btn-floating btn-large waves-effect waves-light red" onClick={this.displayPopup}><i class="material-icons"> add</i></a>
         <Popup show={this.state.isOpen}

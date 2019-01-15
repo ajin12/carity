@@ -7,10 +7,10 @@ h3 {
   padding: 0;
 }
 html, body, .app {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   position: absolute;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -28,6 +28,11 @@ input[type=text], input[type=amount] {
 
 .main {
   height: 100vh;
+  position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 25px;
+    left: 200px;
 }
 .center-div
 {
@@ -39,12 +44,19 @@ input[type=text], input[type=amount] {
 right:50px;/*desired value*/
 }
 
+.display {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30%;
+    width: 30%; }
+
 .popup {
   position: fixed;
   width: 50%;
   height: 50%;
   top: 0;
-  left: 0;
+  left: 200px;
   right: 0;
   bottom: 0;
   margin: auto;
